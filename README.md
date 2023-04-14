@@ -27,3 +27,4 @@ the Home wireframe for the site.
 ![SignUpWireframe](./pics/signup.jpg);
 
 ![WRRC](./pics/WRRC.jpg);
+
