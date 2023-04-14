@@ -1,5 +1,5 @@
+// @ts-nocheck
 import './App.css';
-// @ts-ignore
 import { Routes, Route } from "react-router-dom";
 import LogIn from './Components/LogIn/LogIn';
 import SignUp from './Components/SignUp/SignUp';
