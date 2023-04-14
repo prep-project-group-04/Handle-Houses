@@ -6,7 +6,7 @@ function NavbarTop() {
     const [profilePicture, setProfilePicture] = useState('');
 
     const handleSignIn = () => {
-        // Link to Aseel Sign-in Page
+        // Link to Sign-in Page
         setIsSignedIn(true);
         setProfilePicture('https://example.com/path/to/profile-picture.jpg');
     };

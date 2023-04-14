@@ -6,8 +6,10 @@ function NavbarBottom() {
   const priceRangeRef = useRef();
 
   const handleButtonClick = () => {
-    console.log('Selected city:', cityRef.current.value);
-    console.log('Selected price range:', priceRangeRef.current.value);
+    if (cityRef.current && priceRangeRef.current) {
+        console.log('Selected city:', cityRef.current.value);
+        console.log('Selected price range:', priceRangeRef.current.value);
+      }
   };
 
   return (
