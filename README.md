@@ -17,3 +17,14 @@ Some of the fist features>>>
 •	input for max price
 •	input for place
 •	input of the space
+
+## The Wireframes
+
+the Home wireframe for the site.
+
+![HomeWireframe](./pics/home.jpg);
+
+![SignUpWireframe](./pics/signup.jpg);
+
+![WRRC](./pics/WRRC.jpg);
+
