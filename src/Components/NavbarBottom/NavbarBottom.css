@@ -1,0 +1,26 @@
+.NavbarBottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFC9AC;
+    padding: 1rem;
+}
+
+.NavbarBottom select {
+    background-color: #fff;
+    color: #132A09;
+    padding: 0.5rem;
+    border: none;
+    overflow-y: scroll;
+    max-height: 150px;
+}
+
+
+.NavbarBottom button {
+    background-color: #132A09;
+    color: #FFC9AC;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
