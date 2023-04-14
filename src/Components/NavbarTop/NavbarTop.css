@@ -1,0 +1,61 @@
+.NavbarTop {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #132A09;
+    padding: 1rem;
+    border-bottom: 2px solid #FFC9AC;
+}
+
+.NavbarTop a {
+    color: #FFC9AC;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.NavbarTop img {
+    height: 40px;
+}
+
+.NavbarTop button {
+    background-color: #FFC9AC;
+    color: #132A09;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .NavbarTop {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+    .NavbarTop a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .button-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0.5rem;
+        margin-top: 0.5rem;
+        justify-items: end;
+        width: 100%;
+    }
+}

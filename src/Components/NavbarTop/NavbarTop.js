@@ -1,5 +1,7 @@
+// @ts-nocheck
 import React, { useState } from 'react';
 import './NavbarTop.css';
+import Logo from '../../assets/handlehome.png'
 
 function NavbarTop() {
     const [isSignedIn, setIsSignedIn] = useState(false);
@@ -8,7 +10,7 @@ function NavbarTop() {
     const handleSignIn = () => {
         // Link to Sign-in Page
         setIsSignedIn(true);
-        setProfilePicture('https://example.com/path/to/profile-picture.jpg');
+        setProfilePicture('profile-picture.jpg');
     };
     const handleSignOut = () => {
         setIsSignedIn(false);
@@ -17,7 +19,7 @@ function NavbarTop() {
 
     return (
         <nav className='NavbarTop'>
-            <a href="/"><img src="Logo.png" alt="Logo" /></a>
+            <a href="/"><img src={Logo} alt="Logo" /></a>
             <a href="/favouriteList">Favourite List</a>
             <a href="/contact">Contact</a>
             <div className="button-container">
