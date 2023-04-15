@@ -1,10 +1,8 @@
 // @ts-nocheck
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './reset.css'
 import './index.css';
 import App from './App';
-import 'rest.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 

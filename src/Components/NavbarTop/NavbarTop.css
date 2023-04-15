@@ -1,31 +1,29 @@
 .NavbarTop {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    background-color: #132A09;
     padding: 1rem;
-    border-bottom: 2px solid #FFC9AC;
+    flex-wrap: wrap;
+    width: 85%;
+    font-family: sans-serif;
+    font-weight: bold;
+    column-gap: 4%;
 }
 
 .NavbarTop a {
+    display: block;
     color: #FFC9AC;
     text-decoration: none;
+    font-size:1.2rem;
     margin-right: 1rem;
+    padding-bottom: 2px;
 }
-
-.NavbarTop img {
-    height: 40px;
+.NavbarTop a:hover{
+    color: #fff;
+    border-bottom:3px solid #ff5a02;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
-
-.NavbarTop button {
-    background-color: #FFC9AC;
-    color: #132A09;
-    padding: 0.5rem 1rem;
-    border: none;
-    cursor: pointer;
-    margin-left: 0.5rem;
-}
-
 .button-container {
     display: flex;
     align-items: center;
@@ -38,16 +36,10 @@
     margin-right: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .NavbarTop {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 20px;
-    }
-
+@media (max-width: 826px) {
     .NavbarTop a {
         display: block;
-        margin: 0.5rem 0;
+        margin: 0.5rem 2%;
     }
 
     .button-container {

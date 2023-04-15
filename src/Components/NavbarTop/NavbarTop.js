@@ -1,39 +1,31 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import './NavbarTop.css';
-import Logo from '../../assets/handlehome.png'
+import { Link } from 'react-router-dom';
 
 function NavbarTop() {
     const [isSignedIn, setIsSignedIn] = useState(false);
-    const [profilePicture, setProfilePicture] = useState('');
+    // const [profilePicture, setProfilePicture] = useState('');
 
     const handleSignIn = () => {
-        // Link to Sign-in Page
         setIsSignedIn(true);
-        setProfilePicture('profile-picture.jpg');
     };
-    const handleSignOut = () => {
-        setIsSignedIn(false);
-        setProfilePicture('');
-    };
+    // const handleSignOut = () => {
+    //     setIsSignedIn(false);
+    //     setProfilePicture('');
+    // };
 
     return (
         <nav className='NavbarTop'>
-            <a href="/"><img src={Logo} alt="Logo" /></a>
-            <a href="/favouriteList">Favourite List</a>
-            <a href="/contact">Contact</a>
+            <Link href="/">Home</Link>
+            <Link href="/favouriteList">About Us</Link>
+            <Link href="/favouriteList">Favourite List</Link>
+            <Link href="/contact">Contact</Link>
             <div className="button-container">
-                {isSignedIn ? (
-                    <>
-                        <img className='profile-picture' src={profilePicture} alt="User profile" />
-                        <button onClick={handleSignOut}>Sign Out</button>
-                    </>
-                ) : (
-                    <>
-                        <button onClick={handleSignIn}>Sign In</button>
-                        <button className="signup-button">Don't have an account? Sign up</button>
-                    </>
-                )}
+                {
+                   isSignedIn? <Link to="/personalProfile" ><i class="fa-solid fa-user"></i></Link>:
+                   <Link to='login' onClick={handleSignIn}>Login</Link>
+                }
             </div>
         </nav>
     );
