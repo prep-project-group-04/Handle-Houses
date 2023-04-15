@@ -1,0 +1,114 @@
+.swiper {
+    width: 340px;
+    height: 500px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .swiper-slide:nth-child(1n) {
+    background-color: rgb(252, 155, 155);
+  }
+  
+  .swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+  }
+  
+  .swiper-slide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+  }
+  
+  .swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+  }
+  
+  .swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+  }
+  
+  .swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+  }
+  
+  .swiper-slide:nth-child(7n) {
+    background-color: rgb(35, 99, 19);
+  }
+  
+  .swiper-slide:nth-child(8n) {
+    background-color: rgb(0, 68, 255);
+  }
+  
+  .swiper-slide:nth-child(9n) {
+    background-color: rgb(218, 12, 218);
+  }
+  
+  .swiper-slide:nth-child(10n) {
+    background-color: rgb(54, 94, 77);
+  }
+
+  #AboutUsPage {
+    background-image: radial-gradient(#fff,rgb(54, 94, 77));
+     
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+
+}
+
+  #details {
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #132A09;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #details p {
+    padding-left: 4px;
+  }
+
+  #details img{
+    width: 340px;
+    height: 350px;
+    object-fit: cover;
+    
+  }
+
+   #logo1 {
+    padding-left: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 60%;
+    color: rgb(21, 21, 21);
+    padding-bottom: 10px;
+    margin-left: 10%;
+  }
+  
+
+  
+  #l #l1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: rgb(35, 35, 35);
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  
+  #l img {
+    width: 25px;
+    height: 25px;
+    
+  }
+
