@@ -44,22 +44,24 @@ function NavbarBottom() {
   };
 
   return (
-    <nav className='NavbarBottom'>
-      <select ref={cityRef} name="city" size="1">
-        <option value="">Choose City</option>
-        {cities.map((city, index) => (
-          <option key={index} value={city}>{city}</option>
-        ))}
-      </select>
-      <select ref={priceRangeRef} name="price-range">
-        <option value="">Price Range</option>
-        <option value="85k-599k">85k-599k</option>
-        <option value="599k-948k">599k-948k</option>
-        <option value="949k-1.7m">949k-1.7m</option>
-        <option value="1.7m-11m">1.7m-11m</option>
-      </select>
-      <button onClick={handleButtonClick}>Search</button>
-    </nav>
+    <div className='filter'>
+      <nav className='NavbarBottom'>
+        <select ref={cityRef} name="city" size="1">
+          <option value="noChoice">Choose City</option>
+          {cities.map((city, index) => (
+            <option key={index} value={city}>{city}</option>
+          ))}
+        </select>
+        <select ref={priceRangeRef} name="price-range">
+          <option value="noChoice">Price Range</option>
+          <option value="85k-599k">85k-599k</option>
+          <option value="599k-948k">599k-948k</option>
+          <option value="949k-1.7m">949k-1.7m</option>
+          <option value="1.7m-11m">1.7m-11m</option>
+        </select>
+        <div onClick={handleButtonClick}><i class="fa-solid fa-magnifying-glass fa-rotate-90"></i></div>
+      </nav>
+    </div>
   );
 }
 
