@@ -3,21 +3,18 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import LogIn from './Components/LogIn/LogIn';
 import SignUp from './Components/SignUp/SignUp';
-import NavbarTop from './Components/NavbarTop/NavbarTop';
-import NavbarBottom from './Components/NavbarBottom/NavbarBottom';
-import Footer from './Components/Footer/Footer';
+
+import StartPage from './Components/StartPage/StartPage';
 
 
 function App() {
   return (
     <div className='App'>
-    <NavbarTop />
-    <NavbarBottom />
     <Routes>
-      <Route path="/" element={<LogIn/>} />
+      <Route path="/" element={<StartPage />} />
+      <Route path="Login" element={<LogIn/>} />
       <Route path="/SignUp" element={<SignUp/>}/>
     </Routes>
-    <Footer/>
     </div>
   );
 }
