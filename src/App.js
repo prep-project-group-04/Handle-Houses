@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/favourite" element={<FavPage />} />
+        <Route path="/favouriteList" element={<FavPage />} />
       </Routes>
       <Footer />
     </div>

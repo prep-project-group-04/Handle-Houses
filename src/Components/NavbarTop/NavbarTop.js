@@ -20,7 +20,7 @@ function NavbarTop() {
     return (
         <nav className='NavbarTop'>
             <a href="/"><img src={Logo} alt="Logo" /></a>
-            <a href="/favourite">Favourite List</a>
+            <a href="/favouriteList">Favourite List</a>
             <a href="/contact">Contact</a>
             <div className="button-container">
                 {isSignedIn ? (
