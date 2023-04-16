@@ -7,7 +7,8 @@ import NavbarTop from './Components/NavbarTop/NavbarTop';
 import NavbarBottom from './Components/NavbarBottom/NavbarBottom';
 import Footer from './Components/Footer/Footer';
 import FavPage from './Components/FavPage/FavPage';
-
+import ForgetPass from "./Components/ForgPass/ForgPass"
+import PasswordReset from "./Components/ForgPass/Restpass"
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/" element={<LogIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/favouriteList" element={<FavPage />} />
+        <Route path="/forgot-password" element={<ForgetPass />} />
+        <Route path="/reset-password" element={<PasswordReset />} />
       </Routes>
       <Footer />
     </div>
