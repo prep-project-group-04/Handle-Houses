@@ -82,6 +82,7 @@
     width: 150px;
     height: 150px;
 }
+
 /* Not Signed in */
 .not-signed-in {
     font-family: Arial, sans-serif;
@@ -119,6 +120,7 @@
 .signup-button:hover {
     background-color: #EAB395;
 }
+
 @media (max-width: 768px) {
     .profile-page {
         height: auto;
