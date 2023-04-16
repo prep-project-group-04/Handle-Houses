@@ -7,6 +7,7 @@ import StartPage from './Components/StartPage/StartPage';
 import AboutUs from './Components/AboutUs/AboutUs';
 import ContactUs from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
+import Profile from './Components/Profile/Profile';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/favouriteList" element={<FavPage />} />
         <Route path="/AboutUs" element={<AboutUs/>}/> 
       <Route path="/ContactUs" element={<ContactUs/>}/> 
+      <Route path="/Profile" element={<Profile/>}/>
       </Routes>
     </div>
   );
