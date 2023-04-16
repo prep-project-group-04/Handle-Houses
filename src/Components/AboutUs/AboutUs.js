@@ -1,3 +1,4 @@
+// @ts-nocheck
 import '../AboutUs/AboutUs.css'
 import React, { useRef, useState } from "react";
 // Import Swiper React components
@@ -8,12 +9,23 @@ import "swiper/css/effect-cards";
 
 import { EffectCards } from "swiper";
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+import Header from '../header/header';
+import handlehome from '../../assets/handlehome.png' 
 
 
 export default function AboutUs() {
-    return (
+    return (<>
+           <Header/>
         <section id='AboutUsPage'>
-            <br /><br /><br />
+
+            <nav id='HandleHomeLogo'>
+             <img src={handlehome} alt='handleHome img' />
+             <p>Thank you for using handleHome, here is some information about us :</p>
+
+            </nav>
+
+
             <Swiper
                 effect={"cards"}
                 grabCursor={true}
@@ -117,7 +129,9 @@ export default function AboutUs() {
                     </nav>
                 </SwiperSlide>
             </Swiper>
-            <br /><br /><br />
+            
         </section>
+        <Footer/>
+        </>
     )
 }

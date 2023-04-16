@@ -1,11 +1,13 @@
 header{
-    position: sticky !important;
+    /* position: sticky !important; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(1deg,#132A09,#316e16);
     padding: 0 3%;
     width: 100%;
+    top: 0;
+    z-index: 1;
 }
 header a{
     padding: 0;

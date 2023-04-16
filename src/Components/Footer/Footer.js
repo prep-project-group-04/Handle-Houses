@@ -9,10 +9,10 @@ export default function Footer() {
                 <section id='infSection'>
 
                     <nav id='listNave'>
-                        <h1>handleHome</h1>
+                        <h1>handle<p id=''>Home</p></h1>
                         <ul>
                             <li><Link id='listL' to='/AboutUs'>About Us</Link></li>
-                            <li><Link id='listL' to=''>Careers</Link></li>
+                            <li><Link id='listL' to='/ContactUs'>Contact us</Link></li>
                             <li><Link id='listL' to=''>Blogs</Link></li>
                             <li><Link id='listL' to=''>Resources</Link></li>
                         </ul>
@@ -30,8 +30,8 @@ export default function Footer() {
                         <p>Follow us on...</p>
                         <nav id="fip"><Link id='l1' to="https://web.facebook.com/?_rdc=1&_rdr"><img src="https://seeklogo.com/images/F/facebook-icon-logo-819DD0A07B-seeklogo.com.png" /></Link></nav>
                         <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" /></Link></nav>
-                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://w7.pngwing.com/pngs/133/360/png-transparent-social-media-computer-icons-tulane-university-facebook-drawing-twitter-twitter-logo-blue-logo-computer-wallpaper-thumbnail.png" /></Link></nav>
-                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://w7.pngwing.com/pngs/922/489/png-transparent-whatsapp-icon-logo-whatsapp-logo-whatsapp-logo-text-trademark-grass-thumbnail.png" /></Link></nav>
+                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" /></Link></nav>
+                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" /></Link></nav>
 
                     </nav>
 
