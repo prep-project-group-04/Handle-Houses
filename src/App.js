@@ -22,6 +22,7 @@ function App() {
       <Route path="/ContactUs" element={<ContactUs/>}/> 
       <Route path="/Profile" element={<Profile/>}/>
       </Routes>
+      
     </div>
   );
 }
