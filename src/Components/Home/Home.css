@@ -17,8 +17,6 @@ main {
 .slider1 h1{
     text-shadow: 0 0 5px #fff;
     border-radius: 20px;
-    /* box-shadow: 1px 2px 5px #000; */
-    /* background-color: rgba(240, 248, 255, 0.501); */
     color: #e67300;
     text-align: center;
     transform: rotate(-90deg);
@@ -28,7 +26,7 @@ main {
     width: 100% !important;
     height: 100% !important;
     position: static !important;
-    overflow: hidden;
+    overflow-y: visible !important;
 }
 .slider1 .swiper-pagination,
 .slider1 .swiper-button-next:after,
@@ -41,6 +39,7 @@ main {
     width: 100% !important;
     height: 100% !important;
     justify-content: center;
+    overflow-y: visible !important;
     align-items: center;
   }
   

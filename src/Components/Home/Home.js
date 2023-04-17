@@ -19,10 +19,9 @@ let data = require('../../data/Home.json');
 export default function Home() {
     return (
         <>
-            <Header />
+        <Header />
             <main>
                 <div className="slider1">
-                    {/* <h1>House From Your Dream</h1> */}
                     <Swiper
                         spaceBetween={1}
                         centeredSlides={true}

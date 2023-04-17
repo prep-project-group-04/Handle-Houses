@@ -2,45 +2,42 @@
 import React, { useState } from 'react';
 import './NavbarTop.css';
 import { Link } from 'react-router-dom';
-import List from '../../assets/ee.png'
 
 function NavbarTop() {
-    const [isSignedIn, setIsSignedIn] = useState(false);
-    // const [profilePicture, setProfilePicture] = useState('');
-    const [showMenu, setShowMenu] = useState(false);
-
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
-    };
-    const handleSignIn = () => {
-        setIsSignedIn(true);
-    };
-    // const handleSignOut = () => {
-    //     setIsSignedIn(false);
-    //     setProfilePicture('');
-    // };
-
+    const [mode, setMode] = useState("0%");
+    function Nav() {
+        if (mode === '0%') {
+            setMode("100%")
+        }
+        else {
+            setMode('0%')
+        }
+    }
     return (
-        <nav className='NavbarTop'>
-            <img
-                src={List}
-                alt="Menu"
-                onClick={toggleMenu}
-                className="menu-image"
-            />
-            <div className={`nav-links ${showMenu ? 'shown' : 'hidden'}`}>
-                <Link href="/home">Home</Link>
-                <Link href="/AboutUs">About Us</Link>
-                <Link href="/favouriteList">Favourite List</Link>
-                <Link href="/contact">Contact</Link>
-                <div className="button-container">
-                    {
-                        isSignedIn ? <Link to="/personalProfile"><i class="fa-solid fa-user"></i></Link> :
-                            <Link to='login' onClick={handleSignIn}>Login</Link>
-                    }
+        <>
+            <nav className='NavbarTop'>
+                <Link to="/home" className='lab'>Home</Link>
+                <Link to="/AboutUs" className='lab'>About Us</Link>
+                <Link to="/favouriteList" className='lab'>Favourite List</Link>
+                <Link to="/contact" className='lab'>Contact</Link>
+                <div className="button-container lab">
+                    <Link to="/personalProfile"><i class="fa-solid fa-user"></i></Link>
                 </div>
+                <div id="nav2" onClick={Nav}>
+                    <i className="fa-solid fa-list"></i>
+                    <Link to="/personalProfile"><i class="fa-solid fa-user"></i></Link>
+                </div>
+            </nav>
+            <div id="mopileNav" style={{ width: mode }}>
+                <div id="nav22" onClick={Nav}>
+                    <i className="fa-solid fa-list"></i>
+                </div>
+                <Link to="/home">Home</Link>
+                <Link to="/AboutUs">About Us</Link>
+                <Link to="/favouriteList">Favourite List</Link>
+                <Link to="/contact">Contact</Link>
             </div>
-        </nav>
+        </>
     );
 
 }
