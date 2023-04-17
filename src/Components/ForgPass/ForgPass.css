@@ -1,0 +1,24 @@
+.link{
+    display:flex;
+    justify-content: right;
+    margin: 10px 5px;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: blue;
+}
+
+.link:active {
+    color: orange;
+  }
+
+#email1{
+    border: none;
+    outline: none;
+    height: 40px;
+}
+
+.iconEmail{
+    margin-left: 20px;
+}
