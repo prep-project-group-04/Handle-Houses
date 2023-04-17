@@ -1,0 +1,86 @@
+body{
+    background-color: rgb(167, 224, 167);
+}
+#Frontend{
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    width: 100%;
+    margin-top: 130px;
+    justify-content: space-around;
+}
+
+#logo{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin: top 40px;;
+ justify-content: flex-start;
+    ;
+}
+section{
+
+    flex-wrap:  wrap ;
+    border-color: #FFB52E;
+    border-width: 100px;
+}
+#res{
+    color: aliceblue;
+    margin-left: 50px;
+}
+#divv{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    
+}
+.resorses{
+  padding: 0;
+  box-sizing: border-box;
+  width: 50;
+  padding-bottom: -100px;
+  height: 40;
+
+}
+img{
+    height: 60px;
+    width: 60px;
+     border-top-left-radius: 50% 50%;
+      border-top-right-radius: 50% 50%;
+       border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+     
+}
+
+.cardfrontend{
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+     border-bottom-right-radius: 50% 50%;
+      border-bottom-left-radius: 50% 50%;
+    margin: 20px;
+    height: 350px;
+    width: 200px;
+    background-color: #FFB52E;
+    justify-content:center;
+    text-align: center;
+padding-top: 30px;
+box-shadow:0 0 6px 6px ;
+
+
+}
+
+
+.contener{
+    margin:-100;
+    flex-direction: column;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    justify-content: space-around;
+
+}
+#res{
+    margin-left: 10px;
+}

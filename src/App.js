@@ -9,6 +9,8 @@ import AboutUs from './Components/AboutUs/AboutUs';
 import Contactus from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
 import Profile from './Components/Profile/Profile';
+import Resources from './Components/Resources/Resources';
+//import { Component } from 'react';
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/contact" element={<Contactus />} />
         <Route path="/AboutUs" element={<AboutUs/>}/> 
       <Route path="/Profile" element={<Profile/>}/>
+      <Route path="/Resources" element={<Resources/>}/>
+
       </Routes>
       
     </div>
