@@ -1,29 +1,35 @@
 // @ts-nocheck
 import './App.css';
 import { Routes, Route } from "react-router-dom";
+import Home from './Components/Home/Home';
 import LogIn from './Components/LogIn/LogIn';
 import SignUp from './Components/SignUp/SignUp';
-import NavbarTop from './Components/NavbarTop/NavbarTop';
-import NavbarBottom from './Components/NavbarBottom/NavbarBottom';
-import Footer from './Components/Footer/Footer';
+import StartPage from './Components/StartPage/StartPage';
+import AboutUs from './Components/AboutUs/AboutUs';
+import Contactus from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
 import ForgetPass from "./Components/ForgPass/ForgPass"
 import PasswordReset from "./Components/ForgPass/Restpass"
+import Profile from './Components/Profile/Profile';
+
 
 
 function App() {
   return (
     <div className='App'>
-      <NavbarTop />
-      <NavbarBottom />
       <Routes>
-        <Route path="/" element={<LogIn />} />
+        <Route path="/" element={<StartPage />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/favouriteList" element={<FavPage />} />
         <Route path="/forgot-password" element={<ForgetPass />} />
         <Route path="/reset-password" element={<PasswordReset />} />
+        <Route path="/contact" element={<Contactus />} />
+        <Route path="/AboutUs" element={<AboutUs/>}/> 
+      <Route path="/Profile" element={<Profile/>}/>
       </Routes>
-      <Footer />
+      
     </div>
   );
 }

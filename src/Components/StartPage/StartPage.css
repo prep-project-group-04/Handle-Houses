@@ -1,0 +1,47 @@
+.start-page {
+    position: relative;
+    grid-area: main;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .start-page .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+  }
+  
+  .start-page .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #132A09;
+  }
+  
+  .start-page h1 {
+    font-size: 48px;
+  }
+  .start-page p {
+    font-size: large;
+    font-weight: 100;
+  }
+  
+  .start-page .signin-button {
+    background-color: #132A09;
+    color: #FFC9AC;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 1rem;
+  }
+  

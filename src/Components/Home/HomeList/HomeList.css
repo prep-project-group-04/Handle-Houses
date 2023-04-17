@@ -1,0 +1,26 @@
+.listOfHome{
+    display: grid;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.listOfHome .swiper-button-next, 
+.listOfHome .swiper-button-prev{
+    position: absolute !important;
+    top: unset;
+}
+
+.listOfHome .swiper {
+    width: 100%;
+    margin: 0 !important;
+    position: static !important;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.listOfHome .swiper-slide {
+    width: 100% !important;
+    margin: auto !important;
+    height: 100% !important;
+}
