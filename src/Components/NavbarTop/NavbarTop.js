@@ -29,10 +29,10 @@ function NavbarTop() {
                 className="menu-image"
             />
             <div className={`nav-links ${showMenu ? 'shown' : 'hidden'}`}>
-                <Link href="/home">Home</Link>
-                <Link href="/AboutUs">About Us</Link>
-                <Link href="/favouriteList">Favourite List</Link>
-                <Link href="/contact">Contact</Link>
+                <Link to="../Home">Home</Link>
+                <Link to ="../AboutUs">About Us</Link>
+                <Link to ="../FavPage">Favourite List</Link>
+                <Link to="../ContactUs">Contact</Link>
                 <div className="button-container">
                     {
                         isSignedIn ? <Link to="/personalProfile"><i class="fa-solid fa-user"></i></Link> :

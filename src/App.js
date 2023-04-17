@@ -22,7 +22,7 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/home" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/favouriteList" element={<FavPage />} />
+        <Route path="/FavPage" element={<FavPage />} />
         <Route path="/forgot-password" element={<ForgetPass />} />
         <Route path="/reset-password" element={<PasswordReset />} />
         <Route path="/contact" element={<Contactus />} />
