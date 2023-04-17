@@ -36,7 +36,7 @@ function NavbarTop() {
                 <div className="button-container">
                     {
                         isSignedIn ? <Link to="/personalProfile"><i class="fa-solid fa-user"></i></Link> :
-                            <Link to='login' onClick={handleSignIn}>Login</Link>
+                            <Link to='/login' onClick={handleSignIn}>Login</Link>
                     }
                 </div>
             </div>
