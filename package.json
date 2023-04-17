@@ -17,6 +17,8 @@
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "sort-by": "^1.2.0",
+    "react-dotenv": "^0.1.3",
+    "react-swiper": "^0.1.5",
     "swiper": "^9.2.2"
   },
   "scripts": {
@@ -45,5 +47,8 @@
   },
   "devDependencies": {
     "web-vitals": "^3.3.1"
-  }
+  },
+  "tags": [
+    "swiper"
+  ]
 }

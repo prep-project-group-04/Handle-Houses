@@ -1,11 +1,12 @@
 header{
-    position: sticky !important;
     display: flex;
+    grid-area: header;
     justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(1deg,#132A09,#316e16);
-    padding: 0 3%;
+    padding: 4px 3% 1px 3%;
     width: 100%;
+    border-bottom: 3px solid #afaeae;
 }
 header a{
     padding: 0;

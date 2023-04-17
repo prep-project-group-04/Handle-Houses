@@ -1,0 +1,28 @@
+.swiperGroup{
+    width: 100%;
+    height: 100%;
+    position: static !important;
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+.swiperGroup img{
+    width: 400px;
+    height: 450px;
+    border: none;
+    border-radius: 0 0 200px 200px;
+}
+
+
+.swiperGroup div{
+    background-color: rgba(170, 88, 21, 0.534);
+    border-radius: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 550px;
+    height: 350px;
+}

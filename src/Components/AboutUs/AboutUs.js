@@ -1,3 +1,4 @@
+// @ts-nocheck
 import '../AboutUs/AboutUs.css'
 import React, { useRef, useState } from "react";
 // Import Swiper React components

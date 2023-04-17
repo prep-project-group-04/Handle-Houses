@@ -17,10 +17,10 @@ function NavbarTop() {
 
     return (
         <nav className='NavbarTop'>
-            <Link href="/">Home</Link>
-            <Link href="/favouriteList">About Us</Link>
-            <Link href="/favouriteList">Favourite List</Link>
-            <Link href="/contact">Contact</Link>
+            <Link to="/home">Home</Link>
+            <Link to="/AboutUs">About Us</Link>
+            <Link to="/favouriteList">Favourite List</Link>
+            <Link to="/contact">Contact</Link>
             <div className="button-container">
                 {
                    isSignedIn? <Link to="/personalProfile" ><i class="fa-solid fa-user"></i></Link>:
