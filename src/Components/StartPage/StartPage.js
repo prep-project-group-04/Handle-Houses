@@ -1,9 +1,9 @@
 // @ts-nocheck
 import { Link } from 'react-router-dom';
 import './StartPage.css';
-import backgroundVideo from '../../assets/backgroundVideo.mp4'
+import backgroundVideo from '../../assets/backgroundVideo.mp4';
 
-function StartPage() {
+export default function StartPage() {
     return (
         <div className="start-page">
             <video autoPlay loop muted className="background-video">
@@ -19,5 +19,3 @@ function StartPage() {
         </div>
     );
 }
-
-export default StartPage;

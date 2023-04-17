@@ -29,8 +29,8 @@ function NavbarTop() {
                 className="menu-image"
             />
             <div className={`nav-links ${showMenu ? 'shown' : 'hidden'}`}>
-                <Link href="/">Home</Link>
-                <Link href="/favouriteList">About Us</Link>
+                <Link href="/home">Home</Link>
+                <Link href="/AboutUs">About Us</Link>
                 <Link href="/favouriteList">Favourite List</Link>
                 <Link href="/contact">Contact</Link>
                 <div className="button-container">
