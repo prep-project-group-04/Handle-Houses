@@ -8,6 +8,7 @@ import StartPage from './Components/StartPage/StartPage';
 import AboutUs from './Components/AboutUs/AboutUs';
 import Contactus from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
+import Profile from './Components/Profile/Profile';
 
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/favouriteList" element={<FavPage />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/contact" element={<Contactus />} />
+        <Route path="/AboutUs" element={<AboutUs/>}/> 
+      <Route path="/Profile" element={<Profile/>}/>
       </Routes>
+      
     </div>
   );
 }
