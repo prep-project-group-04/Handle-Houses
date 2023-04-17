@@ -54,9 +54,7 @@ export default function FavPage(props) {
               <button className='btn1' onClick={handleShowCommentInput}>Add Comment</button>
               <Link to={element.webUrl}><button className='btn1'>More Info</button></Link>
             </div>
-          </div>
-          <ModelFun show={show} handleClose={handleClose} movie={element} />
-          {showCommentInput && (
+            {showCommentInput && (
             <div>
               <textarea
                 rows="3"
@@ -79,6 +77,9 @@ export default function FavPage(props) {
               </ul>
             </div>
           )}
+          </div>
+          <ModelFun show={show} handleClose={handleClose} movie={element} />
+         
         </div>
       ))}
     </>
