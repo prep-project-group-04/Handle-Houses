@@ -21,7 +21,7 @@ export default function AboutUs() {
 
             <nav id='HandleHomeLogo'>
              <img src={handlehome} alt='handleHome img' />
-             <p>Thank you for using handleHome, here is some information about us :</p>
+             {/* <p>Thank you for using handleHome, here is some information about us :</p> */}
 
             </nav>
 
@@ -34,7 +34,7 @@ export default function AboutUs() {
             >
                 <SwiperSlide>
                     <nav id='details'>
-                        <img src='https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='pofile image' />
+                        <img id='ccc' src='https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' alt='pofile image' />
                         <p>Name: Mo'ath ahmad</p>
                         <p>Email: moath.shakhatreh@gmail.com</p>
                         <p>Background: Computer Engineering</p>

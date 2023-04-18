@@ -11,6 +11,7 @@ import FavPage from './Components/FavPage/FavPage';
 import ForgetPass from "./Components/ForgPass/ForgPass"
 import PasswordReset from "./Components/ForgPass/Restpass"
 import Profile from './Components/Profile/Profile';
+import Whatsapp from './Components/Footer/Whatsapp';
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/contact" element={<Contactus />} />
         <Route path="/AboutUs" element={<AboutUs/>}/> 
       <Route path="/Profile" element={<Profile/>}/>
+      <Route path="/Whatsapp" element={<Whatsapp/>}/>
       </Routes>
       
     </div>

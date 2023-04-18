@@ -28,10 +28,10 @@ export default function Footer() {
 
                     <nav id="logo">
                         <p>Follow us on...</p>
-                        <nav id="fip"><Link id='l1' to="https://web.facebook.com/?_rdc=1&_rdr"><img src="https://seeklogo.com/images/F/facebook-icon-logo-819DD0A07B-seeklogo.com.png" /></Link></nav>
-                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" /></Link></nav>
-                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" /></Link></nav>
-                        <nav id="fip"><Link id='l1' to="https://github.com/Moath-shakhatreh"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" /></Link></nav>
+                        <nav id="fip"><Link id='l1' to="https://web.facebook.com/profile.php?id=100091731711106"><img src="https://seeklogo.com/images/F/facebook-icon-logo-819DD0A07B-seeklogo.com.png" /></Link></nav>
+                        <nav id="fip"><Link id='l1' to="https://twitter.com/handleHome_"><img src="https://img.freepik.com/free-icon/twitter_318-674515.jpg" /></Link></nav>
+                        <nav id="fip"><Link id='l1' to="/Whatsapp"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" /></Link></nav>
+                        <nav id="fip"><Link id='l1' to="https://web.facebook.com/profile.php?id=100091731711106"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" /></Link></nav>
 
                     </nav>
 
