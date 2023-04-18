@@ -1,33 +1,50 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import {  Link } from "react-router-dom";
-// @ts-ignore
 import { redirect } from "react-router-dom";
-// @ts-ignore
-import axios from "axios";
+import { useRef } from "react";
 import "./ForgPass.css";
 
 export default function PasswordReset(props) {
+  const firstPass = useRef();
+  const secPass = useRef();
+  const [firstPassword, setFirstPassword] = useState('');
   const [rest, setRest] = useState(false);
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
+  const [secPassword, setSecPassword] = useState("");
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setFirstPassword(firstPass.current.value);
+    setSecPassword(secPass.current.value);
+    console.log(secPassword);
+    console.log(firstPassword);
 
-    if (password !== confirmPassword) {
+  
+    if (firstPass !== secPass) {
       alert("Passwords do not match");
       return;
     }
 
     try {
-        //??????????
-      const response = await axios.post("url/password-reset", { password });
       setRest(true);
+
+      let url = `/updatePass`;
+      let data = {
+        
+      };
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(response);
     } catch (error) {
-      alert("Failed to reset password");
+      console.error(error);
     }
   };
-
   if (rest) {
     redirect("/login");
   }
@@ -38,15 +55,15 @@ export default function PasswordReset(props) {
         <form action="" method="post">
           <h1>Forget Password</h1>
           <div className='iconEmail'>
-            <input type="password" id="email"  placeholder="Please Enter your Password" value={password}
-            onChange={(event) => setPassword(event.target.value)} required />
+            <input type="password" id="email"  placeholder="Please Enter your Password" ref={firstPass}
+             required />
           </div>
           <div className='iconEmail'>
-            <input type="password" id="email" placeholder="Please Conform your Password"  value={confirmPassword}
-            onChange={(event) => setConfirmPassword(event.target.value)} required />
+            <input type="password" id="email" placeholder="Please Conform your Password" ref={secPass}
+            required />
           </div>
           <button type="submit" onClick={(e)=>{handleSubmit(e)}}>Recover</button>
-          <Link className='link' to="/">Login</Link>
+          <Link className='link' to="/">Go Back</Link>
         </form>
       </div>
     

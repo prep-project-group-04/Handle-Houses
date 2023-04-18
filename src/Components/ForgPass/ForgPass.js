@@ -1,25 +1,44 @@
-import {Link} from 'react-router-dom';
+// @ts-nocheck
 // @ts-ignore
-// import axios from 'axios';
+import {Link,redirect} from 'react-router-dom';
+// @ts-ignore
+import { useRef } from "react";
 import { useState } from 'react';
 import "./ForgPass.css";
 
 
 
+
 export default function ForgetPass() {
-    const [email, setEmail] = useState([]);
-    
-    async function checkEmail(){
-      let url =`/email`;
-      const response = await fetch(url);
-      const jsonData = await response.json();
-      console.log(jsonData);
+    const emailCode = useRef();
+
+    const [emaill, setEmail] = useState([]);
+    const [rest, setRest] = useState(false);
+
+    async function postData(el) {
+      // take the email to check if it exist 
+      setEmail(emailCode.current.value);
+      setRest(true);
+      console.log(emaill);
+      let url = `http://localhost:3010/restPassword`
+      let data = {
+        email:el.emaill
+      }
+      
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+      });
+      console.log(response);
     }
+
     
-    
-    function passwardAthunt(event) {
-        // event.preventDefault();
-        // axios.post('url/forget', { email }).then().catch();
+    if (rest) {
+      redirect(`/TokenCode?email=${emaill}`);
     }
 
   return (
@@ -28,13 +47,13 @@ export default function ForgetPass() {
         <form action="" method="post">
           <h1>Forget Password</h1>
           <div className='iconEmail'>
-            <input type="email" id="email" name="email" placeholder="Please enter your Email" value={email}
-              onChange={(event) => setEmail(event.target.value)}  required />
+            <input type="email" id="email" name="email" placeholder="Please enter your Email" ref={emailCode}
+               required />
           </div>
           <Link to="/reset-password">
-          <button type="submit" onClick={(e) => { passwardAthunt(e) }}>Recover</button>
+          <button type="submit" onClick={(e) => { postData(e) }}>Recover</button>
           </Link>
-          <Link className='link' to="/">Login</Link>
+          <Link className='link' to="/">Go Back</Link>
         </form>
       </div>
     </>

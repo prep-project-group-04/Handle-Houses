@@ -11,6 +11,8 @@ import FavPage from './Components/FavPage/FavPage';
 import ForgetPass from "./Components/ForgPass/ForgPass"
 import PasswordReset from "./Components/ForgPass/Restpass"
 import Profile from './Components/Profile/Profile';
+import TokenFun from './Components/ForgPass/Token';
+
 
 
 
@@ -27,6 +29,7 @@ function App() {
         <Route path="/reset-password" element={<PasswordReset />} />
         <Route path="/contact" element={<Contactus />} />
         <Route path="/AboutUs" element={<AboutUs/>}/> 
+        <Route path="/TokenCode" element={<TokenFun/>}/> 
       <Route path="/Profile" element={<Profile/>}/>
       </Routes>
       
