@@ -1,6 +1,6 @@
 // @ts-nocheck
-import React, { useRef, useState } from 'react';
-import ModelFun from "./Model";
+import React, { useState } from 'react';
+import ModelFun from "./Modal"
 import "./FavPage.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,26 +12,12 @@ let DB = require('../../data/Home.json');
 export default function FavPage(props) {
   const [favCity, setfavCity] = useState([]);
   const [show, setShow] = useState(false);
-  // const [newComment, setNewComment] = useState("");
-  const [comments, setComments] = useState([]);
-  const [showCommentInput, setShowCommentInput] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const comment=useRef();
-  let id=10;
-  // const handleCommentChange = (event) => {
-  //   setNewComment(event.target.value);
-  // };
 
-  const handleAddComment = (homeId,userId) => {
-    
-      setComments(comment.current.value); // Add new comment
-    
-    }
-  
-  const handleShowCommentInput = () => {
-    setShowCommentInput(true); // Show comment input textarea
-  };
+
+
+
 
   function handleDelete(id) {
     const newDB = DB.filter((element) => element.id !== id);
@@ -56,35 +42,12 @@ export default function FavPage(props) {
             <div className='class-btn'>
               <button className='btn1' onClick={() => handleDelete(element.id)}>Delete</button>
               <button className='btn1' onClick={handleShow}>Email Us</button>
-              <button className='btn1' onClick={handleShowCommentInput}>Add Comment</button>
               <Link to={element.webUrl}><button className='btn1'>More Info</button></Link>
             </div>
-            {showCommentInput && (
-            <div>
-              <textarea
-              ref={comment}
-                rows="3"
-                // onChange={handleCommentChange}
-                style={{ width: "100%", marginBottom: "10px" }}
-              ></textarea>
-              <button variant="primary" onClick={(e,s)=>handleAddComment(element.id,id)}>
-                Submit
-              </button>
-            </div>
-          )}
-          {comments.length > 0 && (
-            <div>
-              <h5>Comments:</h5>
-              <ul>
-                {comments.map((comment, index) => (
-                  <li key={index}>{comment}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+
           </div>
           <ModelFun show={show} handleClose={handleClose} movie={element} />
-         
+
         </div>
       ))}
     </>
