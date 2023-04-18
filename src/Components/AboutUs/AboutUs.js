@@ -21,7 +21,7 @@ export default function AboutUs() {
 
             <nav id='HandleHomeLogo'>
              <img src={handlehome} alt='handleHome img' />
-             <p>Thank you for using handleHome, here is some information about us :</p>
+             {/* <p>Thank you for using handleHome, here is some information about us :</p> */}
 
             </nav>
 

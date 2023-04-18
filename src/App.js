@@ -9,6 +9,7 @@ import AboutUs from './Components/AboutUs/AboutUs';
 import Contactus from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
 import Profile from './Components/Profile/Profile';
+import Whatsapp from './Components/Footer/Whatsapp';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/contact" element={<Contactus />} />
         <Route path="/AboutUs" element={<AboutUs/>}/> 
       <Route path="/Profile" element={<Profile/>}/>
+      <Route path="/Whatsapp" element={<Whatsapp/>}/>
       </Routes>
       
     </div>
