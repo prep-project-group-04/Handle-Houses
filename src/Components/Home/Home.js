@@ -1,5 +1,7 @@
 // @ts-nocheck
 import './Home.css';
+import  { useState, useEffect } from 'react';
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -17,6 +19,20 @@ import Features from '../features/Features';
 let data = require('../../data/Home.json');
 
 export default function Home() {
+    const [Users , setUsers]=useState([]); 
+    async function getUsers(){
+        const url=process.env.REACT_APP_SERVER_URL;
+
+        const response = await fetch(`${url}/getUsers`);
+        const jsonData = await response.json();
+        setUsers(jsonData)
+    }
+   
+
+
+    useEffect(() => {
+        getUsers()
+      },[]);
     return (
         <>
             <Header />
@@ -48,6 +64,7 @@ export default function Home() {
                 <HomeList data={data} />
                 <Footer />
             </main>
+
         </>
 
     )
