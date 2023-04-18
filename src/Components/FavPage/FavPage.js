@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ModelFun from "./Model";
 import "./FavPage.css";
 import { Link } from "react-router-dom";
@@ -7,27 +7,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed } from '@fortawesome/free-solid-svg-icons';
 import { faBath } from '@fortawesome/free-solid-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+
 let DB = require('../../data/Home.json');
 export default function FavPage(props) {
   const [favCity, setfavCity] = useState([]);
   const [show, setShow] = useState(false);
-  const [newComment, setNewComment] = useState("");
+  // const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
   const [showCommentInput, setShowCommentInput] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCommentChange = (event) => {
-    setNewComment(event.target.value);
-  };
-  const handleAddComment = () => {
-    if (newComment) {
-      setComments([...comments, newComment]); // Add new comment
-      setNewComment(""); // Clear new comment state after adding
+  const comment=useRef();
+  let id=10;
+  // const handleCommentChange = (event) => {
+  //   setNewComment(event.target.value);
+  // };
+
+  const handleAddComment = (homeId,userId) => {
+    
+      setComments(comment.current.value); // Add new comment
+    
     }
-  };
+  
   const handleShowCommentInput = () => {
     setShowCommentInput(true); // Show comment input textarea
   };
+
   function handleDelete(id) {
     const newDB = DB.filter((element) => element.id !== id);
     DB = newDB;
@@ -57,12 +62,12 @@ export default function FavPage(props) {
             {showCommentInput && (
             <div>
               <textarea
+              ref={comment}
                 rows="3"
-                value={newComment}
-                onChange={handleCommentChange}
+                // onChange={handleCommentChange}
                 style={{ width: "100%", marginBottom: "10px" }}
               ></textarea>
-              <button variant="primary" onClick={handleAddComment}>
+              <button variant="primary" onClick={(e,s)=>handleAddComment(element.id,id)}>
                 Submit
               </button>
             </div>
