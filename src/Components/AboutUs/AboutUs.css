@@ -32,7 +32,6 @@ margin-top: 4%;
 #AboutUsPage .swiper {
   width: 350px;
   height: 540px;
-
 }
 
 #AboutUsPage .swiper-slide {
@@ -47,37 +46,37 @@ margin-top: 4%;
 
 #AboutUsPage .swiper-slide:nth-child(1n) {
   /* background-color: rgb(9, 69, 118); */
-  background-image: linear-gradient(black,rgb(69, 69, 153));
+  background-image: linear-gradient(black,rgb(145, 118, 61));
 }
 
 #AboutUsPage .swiper-slide:nth-child(2n) {
   
   background-color: rgb(81, 6, 36);
-  background-image: linear-gradient(black,rgb(37, 45, 93));
+  background-image: linear-gradient(black,rgb(79, 139, 51));
 
 }
 
 #AboutUsPage .swiper-slide:nth-child(3n) {
   background-color: rgb(1, 52, 30);
-  background-image: linear-gradient(black,rgb(146, 56, 138));
+  background-image: linear-gradient(black,rgb(94, 132, 75));
 
 }
 
 #AboutUsPage .swiper-slide:nth-child(4n) {
   background-color: rgb(120, 69, 3);
-  background-image: linear-gradient(black,rgb(140, 92, 51));
+  background-image: linear-gradient(black,rgb(154, 145, 50));
 
 }
 
 #AboutUsPage .swiper-slide:nth-child(5n) {
   background-color: rgb(54, 75, 5);
-  background-image: linear-gradient(black,rgb(135, 54, 58));
+  background-image: linear-gradient(black,rgb(27, 80, 26));
 
 }
 
 #AboutUsPage .swiper-slide:nth-child(6n) {
   background-color: rgb(68, 4, 18);
-  background-image: linear-gradient(black,rgb(55, 116, 135));
+  background-image: linear-gradient(black,rgb(161, 159, 67));
 
 }
 
@@ -110,17 +109,19 @@ margin-top: 4%;
 
 #details p {
   padding-left: 5%;
+  margin-top: 1px;
+  line-height: 1;
   /* padding-bottom: 1px; */
   
 }
 
 #details img{
   /* padding: 5%; */
-  /* width: 100%; */
-  height: 330px;
+  width: 400px;
+  height: 369px;
   object-fit: cover;
   margin-bottom: 3%;
-  
+  margin-top: 1;
 }
 
  #logo1 {
@@ -132,6 +133,7 @@ margin-top: 4%;
   width: 60%;
   color: rgb(21, 21, 21);
   margin-left: 18%;
+  margin-bottom: 4px;
 }
 
 
