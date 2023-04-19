@@ -2,13 +2,38 @@
 import "./SignUp.css"
 import { useRef } from 'react';
 import  { useState } from 'react';
-//import { Redirect } from "react-router";
+import {redirect} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
-export default function SignUp(props) {
+
+
+
+
+
+export default function SignUp() {
+
     const [Confirm, setConfirmPassword] = useState(true);
-    
+    const [userName, setuserName] = useState("");
+    const [userEmail, setuserEmail] = useState("");
+    const [userPassword, setuserPassword] = useState("");
+    const [ConfirmPassword, setConfirmPasswordnew] = useState("");
+    const [rest, setRest] = useState(false);
+    const [rest1, setRest1] = useState(false);
+    const [rest2, setRest2] = useState(false);
+    const [rest3, setRest3] = useState(false);
+    const [rest4, setRest4] = useState(false);
+
+
+
+
+
+
+    // const [rest, setRest] = useState(false);
+
+    const navigate = useNavigate();
+
     const usernameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -16,30 +41,20 @@ export default function SignUp(props) {
 
     function SignUptHandler(e) {
         e.preventDefault()
-        let userName = usernameRef.current.value;
-        let userEmail = emailRef.current.value;
-        let userPassword = passwordRef.current.value;
-        let ConfirmPassword =ConfirmPasswordref.current.value;
+       setuserName(usernameRef.current.value); 
+        setuserEmail(emailRef.current.value) ;
+        setuserPassword(passwordRef.current.value) ;
+        setConfirmPasswordnew(ConfirmPasswordref.current.value) ;
 
-
-      // let newUserData = { userName, userEmail, userPassword }
-
-      //  console.log(newUserData);
-        //props.commentHandler(newMoveData,newMoveData.id)
         if (ConfirmPassword === userPassword){
-          //  console.log(userName, userEmail, userPassword)
             addUsersHandler(userName, userEmail, userPassword)
         }
         else {
             setConfirmPassword(false);
-           // updateConfirmPassword(Confirm);
         }
     }
     
-//    function updateConfirmPassword(Confirm){
-       
 
-//     }
         
     
     
@@ -49,7 +64,7 @@ export default function SignUp(props) {
     
             let data={
                 fullName:userName,
-                Email:userEmail,
+                email:userEmail,
                 password:userPassword
             }
             const response = await fetch(`${url}/addUser`, {
@@ -60,10 +75,38 @@ export default function SignUp(props) {
                   body: JSON.stringify(data)
                 })  
                 const reseveData= await response.json();
-     console.log(reseveData)
-   // if(response.status===201){return redirect("/LogIn");}
+                if (response.status===201){
+                    redirect(`./LogIn`);
+                }
+                console.log(reseveData)
+                if(rest){
+                    navigate('/LogIn');
+                }
+                if(response.status===400){
+                    setRest1(true);
+                }
+                else if(response.status===401){
+                    setRest2(true);
+                }
+                else if(response.status===402){
+                    setRest3(true);
+                }
+                else if(response.status===403){
+                    alert("heloo")
+                    setRest4(true);
+                }
+                
+                
+                
+              
+               
+
 
         }
+        // if(rest){ redirect(`/login`);}
+        if (rest) {
+            
+          }
 
         // useEffect(() => {
         //     setConfirmPassword(true);
@@ -72,10 +115,14 @@ export default function SignUp(props) {
         <div className="body">
             <form action="" method="post">
                 <h1>Sign Up</h1>
+                { rest1? <p>Full name is too long. Maximum length is 25 characters</p>:<p></p>}
                 <input ref={usernameRef} type="text" id="username" name="username" placeholder="Username" required />
+                { rest2? <p>Email is too long. Maximum length is 50 characters</p>:<p></p>}
+                { rest4? <p>Invalid email format</p>:<p></p>}
                 <input ref={emailRef} type="email" id="email" name="email" placeholder="Email" required />
+                { rest3? <p>Password length must be between 8 and 25 characters</p>:<p></p>}
                 <input  ref={passwordRef} type="password" id="password" name="password" placeholder="Password" required />
-             { Confirm? <input ref={ConfirmPasswordref} type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required />:<input ref={ConfirmPasswordref} type="password" onfocus="this.value=''" id="confirm-password" name="confirm-password" placeholder=" Rewrite Confirm Password" required style={{ backgroundColor:'hsl(0, 43%, 69%)'}} />}
+             { Confirm? <input ref={ConfirmPasswordref} type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required />:<input ref={ConfirmPasswordref} type="password" id="confirm-password" name="confirm-password" placeholder=" Rewrite Confirm Password" required style={{ backgroundColor:'hsl(0, 43%, 69%)'}} />}
                 <button variant="primary" type="submit" onClick={(e) => SignUptHandler(e)} >
                     Sign Up
                 </button>
