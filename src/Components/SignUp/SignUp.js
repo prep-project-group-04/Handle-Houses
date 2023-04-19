@@ -1,9 +1,8 @@
 // @ts-nocheck
 import "./SignUp.css"
 import { useRef } from 'react';
-import  {useEffect, useState } from 'react';
-import { Redirect } from "react-router";
-import { redirect } from "react-router-dom";
+import  { useState } from 'react';
+//import { Redirect } from "react-router";
 
 
 
@@ -28,7 +27,8 @@ export default function SignUp(props) {
       //  console.log(newUserData);
         //props.commentHandler(newMoveData,newMoveData.id)
         if (ConfirmPassword === userPassword){
-            addUsersHandler(e,userName, userEmail, userPassword)
+          //  console.log(userName, userEmail, userPassword)
+            addUsersHandler(userName, userEmail, userPassword)
         }
         else {
             setConfirmPassword(false);
@@ -45,29 +45,29 @@ export default function SignUp(props) {
     
      async function addUsersHandler (userName, userEmail, userPassword){
         
-        let url=`http://localhost:3000/addUsers`
+        let url=process.env.REACT_APP_SERVER_URL
     
             let data={
                 fullName:userName,
                 Email:userEmail,
-                password:userPassword,
+                password:userPassword
             }
-            const response = await fetch(url, {
+            const response = await fetch(`${url}/addUser`, {
                 method: "POST",
                
                 headers: {
                   "Content-Type": "application/json"},
-                  body: JSON.stringify(data), 
+                  body: JSON.stringify(data)
                 })  
                 const reseveData= await response.json();
-    // console.log(reseveData)
-    if(response.status===201){return redirect("/LogIn");}
+     console.log(reseveData)
+   // if(response.status===201){return redirect("/LogIn");}
 
         }
 
-        useEffect(() => {
-            setConfirmPassword(true);
-          },[]);
+        // useEffect(() => {
+        //     setConfirmPassword(true);
+        //   },[]);
     return (
         <div className="body">
             <form action="" method="post">
