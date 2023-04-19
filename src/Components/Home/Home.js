@@ -14,9 +14,22 @@ import img4 from './homeImage/4.png';
 import img5 from './homeImage/5.png';
 import HomeList from './HomeList/HomeList';
 import Features from '../features/Features';
-let data = require('../../data/Home.json');
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Home() {
+    const [data,setHomes]=useState([]);
+    async function getData(){
+        const url=process.env.REACT_APP_SERVER_URL;
+        const response= await fetch(`${url}/`);
+        const jsonData=await response.json();
+        setHomes(jsonData);
+    }
+
+    useEffect(()=>{
+        getData();
+    },[]); 
+
     return (
         <>
         <Header />
