@@ -2,8 +2,7 @@
 // @ts-ignore
 import { Link } from 'react-router-dom';
 // to redirect to the login page after updating the password.
-import { useHistory  } from "react-router-dom";
-
+import { useNavigate } from 'react-router-dom';
 // @ts-ignore
 import { useRef } from "react";
 import { useState } from 'react';
@@ -12,7 +11,7 @@ import "./ForgPass.css";
 export default function ForgetPass() {
   const emailCode = useRef();
   const token = useRef();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   // email
   const [email, setEmail] = useState('');
@@ -85,9 +84,9 @@ export default function ForgetPass() {
           },
           body: JSON.stringify(data),
         });
-
-        console.log(response);
-        history.push("/login"); // to redirect to the login page after updating the password.
+        if (response.status===201){
+          navigate("/login"); // to redirect to the login page after updating the password.
+        }
       } catch (error) {
         console.error(error);
       }
