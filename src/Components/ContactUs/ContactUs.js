@@ -2,7 +2,7 @@ import '../ContactUs/ContactUs.css'
 import Footer from '../Footer/Footer'
 import Header from '../header/header'
 
-export default function () {
+export default function Contactus() {
 return (<> 
     <Header/>
     <body id='contactPage'>
@@ -50,6 +50,7 @@ return (<>
   </div>
     </body>
     <Footer/>
+    {/* <p>mkmkmkmkm</p> */}
     </>
 )
 

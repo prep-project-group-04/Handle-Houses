@@ -38,52 +38,87 @@ export default function FavPage(props) {
   
   
   const [favHouse, setFavHouse] = useState([]);
-  
+
+
+  let userid = 25;
 async function getFavHouses() {
 
-    let url = `http://localhost:3003/getfav`
-
+  let userID = 25
+    // let url = `http://localhost:4000/getfav?userID=${userID}`
+    let url = `http://localhost:4000/getfav`
+    let data =
+      {
+        userID : userid
+      }
+    
     let response = await fetch(url, {
-      method: 'GET',
+      method: 'POST',
+      headers: {
+                  "Content-Type": "application/json",
+                },
+      body : JSON.stringify(data)
     })
-
     let recivedData = await response.json();
+    console.log(4444,recivedData)
     setFavHouse(recivedData)
+    console.log(6666,favHouse)  
+}
+
+
+const [Houses, setHouses] = useState([]);
+
+async function getHouses() {
+
+  let url = `http://localhost:4000/` 
+
+  let response = await fetch(url, {
+    method: 'GET',
+    
+  })
+  
+  let recivedData = await response.json();
+  setHouses(recivedData)  
+  // console.log(7777,Houses)
 }
 
 
 
-  //  let comment = useRef()      
 
-//   async function handleUpdate (userid,homeid){
-//     let url =`http://localhost:3003/getfav`;
+let commentA = useRef()      
+const [object, setobject] = useState({});
+let array = []
 
-//     let response = await fetch(url,{
+ async function favHouses () {
+    favHouse.map((x)=>{
 
-//         method: "PUT",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(
-//             {
-//             comment : comment,
-//             Home_id : homeid,
-//             user_id : userid
-//             }
-//         )
+      Houses.map(y=>{
         
-//   })
-    
-// }
+        if(x.home_id === y.id ){
+          y.comment = commentA.current.value
+          setobject = y ;
+          array.push(object)
+          console.log(5555,array)
 
+      }
+      
+      })
+    })
+  }
+
+  
+    
 
 
   useEffect(() => {
     getFavHouses();
-    console.log(favHouse)
-
+    getHouses();
+    favHouses ();
+    
+    
+    
   }, [])
-
+  
+  
 
 
 
@@ -91,7 +126,7 @@ async function getFavHouses() {
   return (
     <nav id='favPage'>
       <Header/>
-      {favCity && DB.map((element) => (
+      {array && array.map((element) => (
         <div className="card">
           <div className='city-card'>
             <div className='imgdiv'>
@@ -104,14 +139,14 @@ async function getFavHouses() {
               <p className='iconP'><FontAwesomeIcon className='green' icon={faBath} />{`  :  ${element.baths} bathrooms`}</p>
               <p className='iconP'><FontAwesomeIcon className='green' icon={faBed} />{`  :  ${element.beds} bedrooms`}</p>
               <p className='iconP'>{(element.comment) ? (element.comment) : "No comment Added "}</p>
-              <textarea id='favCom'  name='comment' placeholder='Enter yout comment' ></textarea> 
-               {/* ref={comment} */}
+              <textarea id='favCom'  name='commentA' ref={commentA} placeholder='Enter yout comment' ></textarea> 
+               
               <nav id='hButton'>
               <Link to={element.webUrl}><button className='btn1'>More Info</button></Link>
               <button className='btn1' onClick={handleShow}>Email Us</button>
               <button className='btn1' onClick={() => handleDelete(element.id)}>Delete</button>
-              <button className='btn1' >Update Comment</button>
-              {/* onClick={()=>handleUpdate(element.id)} */}
+              <button className='btn1' onClick={()=> favHouses ()} >Update Comment</button>
+              
               </nav>
             </div>
           </div>

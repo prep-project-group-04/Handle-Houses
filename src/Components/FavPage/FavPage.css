@@ -81,7 +81,7 @@
   flex-direction: row;
   /* flex-wrap: wrap; */
   width: 100%;
-  gap: 9px;
+  gap: 8px;
   margin: auto;
   justify-content: center;
 }
