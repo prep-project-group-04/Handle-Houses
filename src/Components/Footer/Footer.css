@@ -55,13 +55,13 @@ footer {
 #listL {
   text-decoration: none;
   color: #cfcfcf;
+  font-size: 17px;
+  
 }
 
 #formNav {
   margin-top: 5px;
   width: 25%;
-
-  
 }
 
 #formNav p{

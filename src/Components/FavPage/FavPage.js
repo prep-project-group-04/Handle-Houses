@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed } from '@fortawesome/free-solid-svg-icons'
 import { faBath } from '@fortawesome/free-solid-svg-icons'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
-
+import Header from '../header/header';
+import Footer from '../Footer/Footer';
 
 
 
@@ -38,7 +39,7 @@ export default function FavPage(props) {
   
   const [favHouse, setFavHouse] = useState([]);
   
-  async function getFavHouses() {
+async function getFavHouses() {
 
     let url = `http://localhost:3003/getfav`
 
@@ -48,36 +49,32 @@ export default function FavPage(props) {
 
     let recivedData = await response.json();
     setFavHouse(recivedData)
-  }
+}
 
 
-  // async function submitHandler(id) {
-    //     let myComment = await comment.current.value;
-    //     props.update(myComment);
-    // }
+
+  //  let comment = useRef()      
+
+//   async function handleUpdate (userid,homeid){
+//     let url =`http://localhost:3003/getfav`;
+
+//     let response = await fetch(url,{
+
+//         method: "PUT",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(
+//             {
+//             comment : comment,
+//             Home_id : homeid,
+//             user_id : userid
+//             }
+//         )
+        
+//   })
     
-    
- const comment = useRef();
- async function submitHandler(id){
-    DB.map(x=>{
-      if(DB.id === id){ 
-          x.comment = comment.current.value
-          
-          return x;
-      }else{
-          return x
-      }
-  })
-    
-}    
-
-
-
-
-
-
-
-
+// }
 
 
 
@@ -93,6 +90,7 @@ export default function FavPage(props) {
 
   return (
     <nav id='favPage'>
+      <Header/>
       {favCity && DB.map((element) => (
         <div className="card">
           <div className='city-card'>
@@ -106,12 +104,14 @@ export default function FavPage(props) {
               <p className='iconP'><FontAwesomeIcon className='green' icon={faBath} />{`  :  ${element.baths} bathrooms`}</p>
               <p className='iconP'><FontAwesomeIcon className='green' icon={faBed} />{`  :  ${element.beds} bedrooms`}</p>
               <p className='iconP'>{(element.comment) ? (element.comment) : "No comment Added "}</p>
-              <textarea id='favCom' ref={comment} name='comment' placeholder='Enter yout comment' ></textarea>
+              <textarea id='favCom'  name='comment' placeholder='Enter yout comment' ></textarea> 
+               {/* ref={comment} */}
               <nav id='hButton'>
               <Link to={element.webUrl}><button className='btn1'>More Info</button></Link>
               <button className='btn1' onClick={handleShow}>Email Us</button>
               <button className='btn1' onClick={() => handleDelete(element.id)}>Delete</button>
-              <button className='btn1' onClick={()=>submitHandler(element.id)}>Update Comment</button>
+              <button className='btn1' >Update Comment</button>
+              {/* onClick={()=>handleUpdate(element.id)} */}
               </nav>
             </div>
           </div>
@@ -120,6 +120,7 @@ export default function FavPage(props) {
       )
       )
       }
+    <Footer/>  
     </nav>
   )
 }
