@@ -8,7 +8,7 @@ import StartPage from './Components/StartPage/StartPage';
 import AboutUs from './Components/AboutUs/AboutUs';
 import Contactus from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
-import ForgetPass from "./Components/ForgPass/ForgPass"
+import ForgetPass from "./Components/ForgPass/Code";
 import PasswordReset from "./Components/ForgPass/Restpass"
 import Profile from './Components/Profile/Profile';
 import TokenFun from './Components/ForgPass/Token';
