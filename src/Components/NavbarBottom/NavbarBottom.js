@@ -1,10 +1,12 @@
 // @ts-nocheck
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './NavbarBottom.css';
+import Filter from '../../assets/ss.png';
 
 function NavbarBottom() {
   const cityRef = useRef();
   const priceRangeRef = useRef();
+  const [showFilters, setShowFilters] = useState(false);
 
   const cities = [
     "New York",
@@ -42,24 +44,32 @@ function NavbarBottom() {
       console.log('Selected price range:', priceRangeRef.current.value);
     }
   };
-
   return (
     <div className='filter'>
       <nav className='NavbarBottom'>
-        <select ref={cityRef} name="city" size="1">
-          <option value="noChoice">Choose City</option>
-          {cities.map((city, index) => (
-            <option key={index} value={city}>{city}</option>
-          ))}
-        </select>
-        <select ref={priceRangeRef} name="price-range">
-          <option value="noChoice">Price Range</option>
-          <option value="85k-599k">85k-599k</option>
-          <option value="599k-948k">599k-948k</option>
-          <option value="949k-1.7m">949k-1.7m</option>
-          <option value="1.7m-11m">1.7m-11m</option>
-        </select>
-        <div onClick={handleButtonClick}><i class="fa-solid fa-magnifying-glass fa-rotate-90"></i></div>
+        {showFilters ? (
+          <>
+            <select ref={cityRef} name="city" size="1">
+              <option value="noChoice">Choose City</option>
+              {cities.map((city, index) => (
+                <option key={index} value={city}>{city}</option>
+              ))}            </select>
+            <select ref={priceRangeRef} name="price-range">
+              <option value="noChoice">Price Range</option>
+              <option value="85k-599k">85k-599k</option>
+              <option value="599k-948k">599k-948k</option>
+              <option value="949k-1.7m">949k-1.7m</option>
+              <option value="1.7m-11m">1.7m-11m</option>
+            </select>
+            <div onClick={handleButtonClick} className='magnifying-glass'>
+              <i class="fa-solid fa-magnifying-glass fa-rotate-90"></i>
+            </div>
+          </>
+        ) : (
+          <div className="icon-container" onClick={() => setShowFilters(!showFilters)}>
+            <img className="filter-icon" src={Filter} alt="Filter Icon" />
+          </div>
+        )}
       </nav>
     </div>
   );
