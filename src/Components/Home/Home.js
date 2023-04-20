@@ -18,10 +18,13 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 export default function Home() {
+    let id =localStorage.getItem("id");
+    id=JSON.parse(id);
     const [data,setHomes]=useState([]);
     async function getData(){
         const url=process.env.REACT_APP_SERVER_URL;
         const response= await fetch(`${url}/`);
+        console.log(response);
         const jsonData=await response.json();
         setHomes(jsonData);
     }
@@ -57,7 +60,7 @@ export default function Home() {
                     </Swiper>
                 </div>
                 <Features />
-                <HomeList data={data} />
+                <HomeList data={data} id={id} />
                 <Footer />
             </main>
         </>

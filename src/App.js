@@ -8,6 +8,7 @@ import StartPage from './Components/StartPage/StartPage';
 import AboutUs from './Components/AboutUs/AboutUs';
 import Contactus from './Components/ContactUs/ContactUs';
 import FavPage from './Components/FavPage/FavPage';
+import ForgetPass from "./Components/ForgPass/Code";
 import Profile from './Components/Profile/Profile';
 
 
@@ -22,7 +23,8 @@ function App() {
         <Route path="/favouriteList" element={<FavPage />} />
         <Route path="/contact" element={<Contactus />} />
         <Route path="/AboutUs" element={<AboutUs/>}/> 
-      <Route path="/Profile" element={<Profile/>}/>
+        <Route path="/forgot-password" element={<ForgetPass />} />
+      <Route path="/personalProfile" element={<Profile/>}/>
       </Routes>
       
     </div>

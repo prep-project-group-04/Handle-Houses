@@ -12,10 +12,10 @@ export default function HomeList(props){
         <section className='listOfHome'>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {
-                    props.data.map((element) => {
+                    props.data  && props.data.map((element) => {
                         return (
                             <SwiperSlide style={{'position':'static'}}>
-                                <House data={element} / >
+                                <House data={element} id={props.id} / >
                             </SwiperSlide>
                         )
                     })
