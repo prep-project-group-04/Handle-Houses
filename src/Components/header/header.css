@@ -1,4 +1,6 @@
 header{
+    position:-webkit-sticky;
+    top: 0;
     display: flex;
     grid-area: header;
     justify-content: space-between;

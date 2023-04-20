@@ -40,6 +40,12 @@
   margin-bottom: 5px;
 }
 
+.red{
+  color: rgb(247, 33, 33);
+  padding: 0;
+  font-size: 15px;
+}
+
 .login input[type="text"],
 .login input[type="password"] {
   padding: 10px;

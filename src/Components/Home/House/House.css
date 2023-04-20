@@ -5,7 +5,8 @@
     display: flex !important;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 5%;
+    padding: 2% 0;
+    gap: 7%;
 }
 
 .swiperGroup img{
@@ -15,14 +16,101 @@
     border-radius: 0 0 200px 200px;
 }
 
+.swiperGroup span{
+    width: 400px;
+    height: 450px;
+    border: 3px solid wheat;
+    border-radius: 0 0 200px 200px;
+    position: absolute;
+    margin-right: 50%;
+    margin-top: 1.5%;
+}
 
 .swiperGroup div{
     background-color: rgba(170, 88, 21, 0.534);
-    border-radius: 1000px;
+    border-radius:0 800px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    box-shadow: 0 0 15px #1f5125;
     align-items: center;
     text-align: center;
     width: 550px;
     height: 350px;
+}
+
+.swiperGroup div section{
+    display: flex;
+    column-gap: 20px;
+}
+
+.swiperGroup div section article{
+    display: flex;
+    column-gap: 3px;
+}
+
+.swiperGroup div p{
+    font-weight: bold;
+}
+
+.swiperGroup div section article p{
+    padding-bottom: 3px;
+}
+
+.swiperGroup div section article i{
+    font-size: 20px;
+}
+
+@media (max-width:999px){
+    .swiperGroup div{
+        margin-top: 7%;
+    }
+    .swiperGroup span{
+        margin-right: 30%;
+    }
+}
+@media (max-width:615px){
+    .swiperGroup span{
+        margin-right: 20%;
+    }
+}
+
+@media (max-width:570px){
+    .swiperGroup img{
+        width: 300px;
+        height: 350px;
+        border-radius: 0 0 150px 150px;
+    }
+    .swiperGroup div{
+        border-radius:0 700px;
+        width: 400px;
+        height: 200px;
+    }
+    .swiperGroup span{
+        width: 300px;
+        height: 350px;
+        border-radius: 0 0 200px 200px;
+        margin-right: 20%;
+        margin-top: 1.5%;
+    }
+}
+
+@media (max-width:411px){
+    .swiperGroup img{
+        width: 250px;
+        height: 270px;
+        border-radius: 0 0 150px 150px;
+    }
+    .swiperGroup div{
+        border-radius:0 150px;
+        width: 300px;
+        height: 200px;
+    }
+    .swiperGroup span{
+        width: 250px;
+        height: 270px;
+        border-radius: 0 0 200px 200px;
+        margin-right: 17%;
+        margin-top: 1.5%;
+    }
 }

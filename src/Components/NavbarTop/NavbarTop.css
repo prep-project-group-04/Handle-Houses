@@ -8,25 +8,22 @@
     font-family: sans-serif;
     font-weight: bold;
     column-gap: 4%;
-    position: relative;
 }
 
 .NavbarTop a {
     display: block;
     color: #FFC9AC;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size:1.2rem;
     margin-right: 1rem;
     padding-bottom: 2px;
 }
-
-.NavbarTop a:hover {
+.NavbarTop a:hover{
     color: #fff;
-    border-bottom: 3px solid #ff5a02;
+    border-bottom:3px solid #ff5a02;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
 }
-
 .button-container {
     display: flex;
     align-items: center;
@@ -39,49 +36,97 @@
     margin-right: 0.5rem;
 }
 
-.nav-links {
-    display: flex;
-}
-
-.menu-image {
-    display: none;
-    cursor: pointer;
-    height: 40px;
-}
-
-.menu-hidden {
+#mopileNav, #nav2{
     display: none;
 }
 
-@media (max-width: 826px) {
-
-    .NavbarTop a,
-    .button-container {
-        display: none;
+@media (max-width: 612px) {
+    .lab{
+        display: none !important;
     }
-
-    .menu-image {
-        display: flex;
+    header{
+        justify-content: space-around;
+    }
+    .NavbarTop{
         justify-content: flex-end;
     }
-
-    .nav-links {
-        display: none;
+    #nav2 {
+        display: block;
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+        padding-right: 20px;
+        column-gap: 2%;
+        cursor: pointer;
+        color: aliceblue;
+        font-size: 20px;
+    }
+    #nav22 i,
+    #nav2 i{
+        font-size: 30px;
+    }
+    #nav22 {
+        display: block;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        color: aliceblue;
+        font-size: 20px;
+        padding-right: 20px;
+        margin-left: 73.5%;
+        position: absolute;
+        top: 23px;
     }
 
-    .nav-links.shown {
+    #mopileNav {
+        height: 100%;
+        top: 0%;
+        position: fixed;
+        right: 0;
+        background-color: #23709c60;
+        transition: 0.5s;
+        padding-top: 15%;
         display: flex;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 1rem;
-        border-radius: 5px;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+    #mopileNav a {
+        position: relative;
+        font-family: sans-serif;
+        right: 0;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+        transition: 0.4s;
+        height: 13%;
+        text-shadow: 2px 2px 5px #121010;
+        font-weight: bold;
     }
 
-    .nav-links.shown a,
-    .nav-links.shown .button-container {
-        display: block;
-        margin-bottom: 0.5rem;
+    #mopileNav a:hover {
+        color: #121010;
+        text-shadow: 2px 2px 5px #ffffff;
+    }
+}
+@media (max-width:536px){
+    #nav2{
+        column-gap: 15px;
+    }
+    #nav22{
+        margin-left: 75%;
+        top: 21.5px;
+    }
+}
+@media (max-width:411px){
+    #nav2{
+        column-gap: 15px;
+    }
+    #nav22{
+        margin-left: 80%;
+        top: 21.5px;
     }
 }

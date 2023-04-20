@@ -1,0 +1,22 @@
+.features{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.features div{
+    width: 300px;
+    height: 400px;
+    box-shadow: 0 0 15px #1f5125;
+    border: none;
+    background-color: rgba(250, 221, 184, 0.447);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features div p{
+    color: #1f5125;
+    font-size: 40px;
+}

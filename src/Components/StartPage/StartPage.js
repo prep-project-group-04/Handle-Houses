@@ -4,6 +4,9 @@ import './StartPage.css';
 import backgroundVideo from '../../assets/backgroundVideo.mp4';
 
 export default function StartPage() {
+    if(localStorage.getItem("id")){
+        localStorage.removeItem("id");
+    }
     return (
         <div className="start-page">
             <video autoPlay loop muted className="background-video">
