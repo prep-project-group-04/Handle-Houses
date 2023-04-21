@@ -21,7 +21,7 @@ export default function ForgetPass() {
 
     // token
     const [code, setCode] = useState('');
-    const [code0,setCode0]=useState("");
+
     // password verification
     const firstPass = useRef();
     const secPass = useRef();
@@ -31,7 +31,7 @@ export default function ForgetPass() {
     async function postData() {
         // take the email to check if it exists and receive a token
         setEmail(emailCode.current.value);
-        let url = `${process.env.REACT_APP_SERVER_URL}/api/sendEmail`;
+        let url = `${process.env.REACT_APP_SERVER_URL}/restPassword`;
         let data = {
             email: email,
         };
@@ -45,7 +45,7 @@ export default function ForgetPass() {
         const responseData = await response.json();// parse response data as JSON
         console.log(response)
         console.log(responseData);
-        // setCode0(responseData);
+        setResponse(responseData);
         
         
         if (response.status === 201) {
@@ -57,7 +57,7 @@ export default function ForgetPass() {
     function passwordAuth(event) {
         event.preventDefault();
         setCode(token.current.value);
-        if (response.status === 201) {
+        if (response === code) {
             setPop("inline");
         }
     }
@@ -96,7 +96,7 @@ export default function ForgetPass() {
 
 
 
-    // console.log(code0);
+    // console.log(response);
     return (
         <>
             <div className="body">
