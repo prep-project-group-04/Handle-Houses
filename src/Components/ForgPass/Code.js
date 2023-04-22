@@ -58,7 +58,7 @@ export default function ForgetPass() {
         event.preventDefault();
         setCode(token.current.value);
         if (response === code) {
-            setPop("inline");
+            setPop("flex");
         }
     }
 
@@ -116,7 +116,7 @@ export default function ForgetPass() {
                     <Link className='link' to="/">Go Back</Link>
                 </form>
             </div>
-            <div className="ppopp">
+            <div className="ppopp" style={{ display: pop}}>
                 <form action="" method="post">
                     <h1>Forget Password</h1>
                     <div className='iconEmail'>
